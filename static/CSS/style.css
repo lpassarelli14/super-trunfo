@@ -1,7 +1,7 @@
 body {
     font-family: 'Courier New', Courier, monospace;
-    background-color: rgb(246, 240, 252);
-    color: darkgreen;
+    background-color: rgb(118, 164, 234);
+    color: rgb(232, 236, 232);
 }
 
 h1 {
@@ -17,7 +17,7 @@ img {
 .carta{
     width: 240px;
     background-color: #262a52;
-    border: 5px solid #8f95bd;
+    border: 5px solid #521558;
     border-radius: 18px;
     padding: 16px;
     text-align: center;
@@ -73,4 +73,32 @@ img {
 /* ===== Animação: a carta brilha com o mouse ===== */
 .carta:hover {
     animation: brilhar 1s infinite;
+}
+
+
+
+/* ===== Aula 5: cole no FIM do static/css/style.css ===== */
+a {
+    color: #7fe3d4;
+}
+
+.botao {
+    display: inline-block;
+    background-color: #ff8a3d;
+    color: #1b1d3a;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.escolhas li {
+    margin: 10px 0;
+    font-size: 22px;
+}
+
+.valor {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffd66b;
 }

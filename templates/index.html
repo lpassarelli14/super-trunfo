@@ -5,12 +5,17 @@
 <html>
     <head>
 <title>Super Trunfo: Futebol</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../static/css/style.css">
 
     </head>
         
     <body>
         <h1>Trunfo de Futebol</h1>
+        <p>
+            <a class="botao" href="/pacotinho">Abrir pacotinho</a>
+            <a href="/regras">Ver as regras do jogo</a>
+            <a href ="{{ url_for('criar') }}">Cria uma nova carta</a>
+        </p>
         <p>
             Esse site e dedicado ao meu jogo customizado de Futebol.
             Qual carta ganharia o duelo?
@@ -18,9 +23,9 @@
         </p>
     <div class="colecao">
 
-    <div class="carta raro">
+    <div class="carta lendaria">
         <h2>Cr7</h2>
-        <img src="images/cr7.png"
+        <img src="../static/images/cr7.png"
 
             alt="Imagem retirada de https://www.pngwing.com/pt/search?q=neymar"
 
@@ -32,12 +37,13 @@
             <li>Drible: 90</li>
             <li>Chute: 95</li>
         </ul>
+        <a class="botao" href="/duelo/carta_1">Duelar</a>
     </div>
 
 
     <div class="carta raro">
         <h2>Neymar</h2>
-        <img src="images/ney.png"
+        <img src="../static/images/ney.png"
 
             alt="Imagem retirada de https://www.pngwing.com/pt/search?q=neymar"
 
