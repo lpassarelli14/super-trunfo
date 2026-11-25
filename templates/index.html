@@ -22,40 +22,33 @@
 
         </p>
     <div class="colecao">
+    {% for chave, carta in cartas.items() %}
+        <div class ="carta {{carta['raridade']}}">
+            <h2>{{ carta['nome'] }}</h2>
+            <img src="/static/images/{{ carta['img']}}"
+             alt="{{ carta['nome'] }}">
 
-    <div class="carta lendaria">
-        <h2>Cr7</h2>
-        <img src="../static/images/cr7.png"
+              <p class="raridade">
+                    {% if carta['raridade'] == "lendaria" %}
+                        Lendária
+                    {% elif carta['raridade'] == "rara" %}
+                        Rara
+                    {% elif carta['raridade'] == "epica" %}
+                        Épica
+                    {% else %}
+                        Comum
+                    {% endif %}
+                    </p>
 
-            alt="Imagem retirada de https://www.pngwing.com/pt/search?q=neymar"
+                    <ul class="atributos">
+                        <li>Velocidade: {{ carta['velocidade'] }}</li>
+                        <li>Drible: {{ carta['drible'] }}</li>
+                        <li>Chute: {{ carta['chute'] }}</li>
+                    </ul>
+                    <a class="botao" href="/duelo/{{ chave }}">Duelar</a>
 
-            width="250">
-
-        <p class="raridade">Raridade: lendaria</p>
-        <ul class="atributos">
-            <li>Velocidade: 90</li>
-            <li>Drible: 90</li>
-            <li>Chute: 95</li>
-        </ul>
-        <a class="botao" href="/duelo/carta_1">Duelar</a>
-    </div>
-
-
-    <div class="carta raro">
-        <h2>Neymar</h2>
-        <img src="../static/images/ney.png"
-
-            alt="Imagem retirada de https://www.pngwing.com/pt/search?q=neymar"
-
-            width="250">
-
-        <p class="raridade">Raridade: epica</p>
-        <ul class="atributos">
-            <li>Velocidade: 90</li>
-            <li>Drible: 95</li>
-            <li>Chute: 80</li>
-        </ul>
-    </div>
+                </div>
+    {% endfor %}
     </div>
 
     </body>

@@ -12,7 +12,7 @@ cartas = {
     "carta_1" : {
                     "nome" : "Cr7",
                     "img" : "cr7.png",
-                    "raridade" : "Lendária",
+                    "raridade" : "lendaria",
                     "velocidade" : 90,
                     "drible" : 90,
                     "chute" : 95
@@ -20,7 +20,7 @@ cartas = {
     "carta_2" : {
                        "nome" : "Neymar",
                        "img" : "ney.png",
-                       "raridade" : "Raro",
+                       "raridade" : "raro",
                        "velocidade" : 90,
                        "drible" : 95,
                        "chute" : 80
@@ -31,7 +31,7 @@ cartas = {
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", cartas = cartas)
 
 
 @app.route("/regras")
@@ -75,7 +75,7 @@ def resultado(carta, atributo):
     else:
         resultado = "Empate!"
 
-    poder_total = minha["viralidade"] + minha["zoeira"] + minha["nostalgia"]
+    poder_total = minha["velocidade"] + minha["drible"] + minha["chute"]
 
     return render_template("resultado.html",
                            atributo=atributo,
@@ -94,10 +94,9 @@ def carta_criada():
     nome = request.form["nome"]
     imagem = request.form["imagem"]
     raridade = request.form["raridade"]
-    viralidade = int(request.form["viralidade"])
-    zoeira = int(request.form["zoeira"])
-    nostalgia = int(request.form["nostalgia"])
-
+    velocidade = int(request.form["velocidade"])
+    drible = int(request.form["drible"])
+    chute = int(request.form["chute"])
     # A carta nova também entra no duelo (até o servidor reiniciar!)
     chave = nome.lower().replace(" ", "-")
     cartas[chave] = {"nome": nome, "imagem": imagem, "raridade": raridade,
